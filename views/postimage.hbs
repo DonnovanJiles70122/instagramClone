@@ -1,0 +1,27 @@
+<div class="log">
+    <legend>Post Image</legend>
+    <form method="POST" enctype="multipart/form-data" action="/post/createPost" id="post-image">
+        <input name="title" required type="text" placeholder="Post Title"/>
+        <br />
+        <input name="description" required type="text" placeholder="Post Description"/>
+        <br />
+        <div class="file-input">
+            <input name="uploadImage" required type="file" id="file" class="file" accept="image/png, image/jpeg">
+            <label for="file">
+                Select Image
+                <p class="file-name"></p>
+            </label>
+        </div>
+        <br />
+        <label class="checkbox">
+            <input type="checkbox"/>
+            <span>Image Acceptable Use Policy</span>
+            <br />
+            <input type="checkbox"/>
+            <span>I Accept <a href="https://google.com">Acceptable Use Policy</a></span>
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</div>

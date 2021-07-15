@@ -1,0 +1,36 @@
+<div class="log">
+    <div id="error"></div>
+    <form method="POST" action="/users/register" id="form" enctype="application/x-www-form-urlencoded">
+        <legend>User Information</legend>
+        <div class="form-control">
+            <input id="uname" required name="username" type="text" placeholder="User Name"/>
+            <small>Error Message</small>
+        </div>
+
+        <div class="form-control">
+            <input required name="email" class="email" id="email" type="email" placeholder="Email"/>
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <input required name="password" type="password" placeholder="Password" id="password"/>
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <input required name="confirmPass" type="password" placeholder="Confirm Password" id="pw-check"/>
+            <small>Error Message</small>
+        </div>
+        <label class="checkbox">
+            <legend>Terms of Services/Privacy Rules</legend>
+            <input type="checkbox"/>
+            <span>Are you older than the age of 13 years old?</span>
+            <br />
+            <input type="checkbox"/>
+            <span>I accept <a href="https://google.com">Accept TOS</a> and <a href="https://google.com">Accept TOS</a> </span>
+        </label>
+        <br />
+        <div>
+            <button type="submit">Login</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>

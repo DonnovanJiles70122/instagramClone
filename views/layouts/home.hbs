@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="public/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="public/js/frontend.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--<script defer src="public/js/valid.js"></script> -->
+</head>
+
+<body>
+    <div>
+        {{log this}}
+        {{> header}}
+            {{#if (emptyObject messages)}}
+                {{> flashmessage}}
+            {{/if}}
+        {{{body}}}
+        {{> footer}}
+    </div>
+
+    {{#if logged}}
+        <script>
+            let ele = document.getElementById('logout-button');
+            if(ele) {
+                ele.onclick = (even) => {
+                    fetch('/users/logout',{
+                        method:"POST"
+                    })
+                    .then((data) => {
+                        location.replace('/');
+                    })
+                }
+            }
+        </script>
+    {{/if}}
+<script>
+    const _form = document.getElementById("post-image");
+    _form.onsubmit = function(event) {
+        event.preventDefault();
+        let _body = new FormData(_form);
+
+        fetch('post/createPost', {
+            body: _body,
+            method:"POST"
+        })
+        .then((data) => {
+            console.log(data);
+            return data.json();
+        })
+        .then((dataAsObject) => {
+            console.log(dataAsObject);
+            alert(dataAsObject.message);
+            location.replace(dataAsObject.redirect);
+        })
+        .catch(err => console.log(err));
+    }
+</script>
+
+</body>
+</html>

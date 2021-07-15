@@ -1,0 +1,25 @@
+<div class="log">
+    <legend>Image Post</legend>
+    <img id="image-post-image" src="/{{currentPost.photopath}}">
+    <div>
+        <div id="info">
+            <h2 id="image-post-text">{{currentPost.title}}</h2>
+        </div>
+        <div id="image-post-author" class="info-tag">{{currentPost.username}}</div>
+        <div id="image-post-date" class="info-tag">{{currentPost.created}}</div>
+        <div id="image-post-desc" class="info-tag">{{currentPost.description}}</div>
+    </div>
+    <div id="message">
+        <header>
+            <h2>Comments</h2>
+        </header>
+
+        <div id="message-list">
+        </div>
+
+        <div id="comment-box">
+            <textarea id="comment-box-text"></textarea>
+            <i id="comment-button" aria-hidden="true" style="text-align: center;"></i>
+        </div>
+    </div>
+</div>
